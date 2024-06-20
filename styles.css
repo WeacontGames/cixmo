@@ -1,0 +1,130 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    overflow: hidden; /* Sayfa kaydırmasını devre dışı bırakmak için */
+}
+
+#app {
+    display: flex;
+    flex: 1;
+}
+
+#sidebar {
+    background-color: #333;
+    color: #fff;
+    width: 200px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#library {
+    margin-top: 20px;
+}
+
+#library h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 5px;
+}
+
+#library .tool {
+    margin-top: 10px;
+    padding: 8px;
+    background-color: #555;
+    border: 1px solid #fff;
+    cursor: grab;
+}
+
+#main {
+    flex: 1;
+    background-color: #f4f4f4;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+#canvasForm {
+    margin-top: 20px;
+}
+
+#toolbar {
+    margin-top: 20px;
+}
+
+#canvasContainer {
+    position: relative;
+    display: inline-block;
+}
+
+#designCanvasWrapper {
+    position: relative;
+    display: inline-block;
+}
+
+canvas {
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+}
+
+.draggable {
+    position: absolute;
+    cursor: move;
+    animation: zoomIn 0.5s ease; /* Genel animasyon */
+}
+
+.draggable .delete-btn {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.draggable:hover .delete-btn {
+    display: flex;
+}
+
+.draggable .resize-handle {
+    position: absolute;
+    left: -10px;
+    bottom: -10px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: se-resize;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
